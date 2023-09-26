@@ -10,7 +10,7 @@ const handleWeatherUpdate = (weatherData) => {
 
 export default function Hero() {
     return (
-        <div className="hero-container" style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}>
+        <div className="h-screen" style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}>
             {/* Banner Section */}
             <div className="bg-gray-800 m text-white py-16">
                 <div className="container mx-auto text-center">
@@ -18,7 +18,7 @@ export default function Hero() {
                     <p className="mt-4 text-gray-300">Some description goes here...</p>
                 </div>
             </div>
-
+            
             <Weather onWeatherUpdate={handleWeatherUpdate} />
         </div>
     )
