@@ -5,14 +5,15 @@ import { FiX, FiMenu } from 'react-icons/fi';
 
 export default function Sidebar() {
     const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState('/'); 
 
     const toggleMobileSidebar = () => {
         setMobileSidebarOpen(!isMobileSidebarOpen);
     };
 
     const closeSidebar = () => {
-        setMobileSidebarOpen(false)
-    }
+        setMobileSidebarOpen(false);
+    };
 
     const links = [
         { text: 'Home', href: '/' },
@@ -20,6 +21,12 @@ export default function Sidebar() {
         { text: 'About', href: '/about' },
         { text: 'Contact', href: '/contact' },
     ];
+
+    // Function to handle link click and update the active link
+    const handleLinkClick = (href) => {
+        setActiveLink(href);
+        closeSidebar();
+    };
 
     return (
         <>
@@ -49,13 +56,13 @@ export default function Sidebar() {
                 {/* Sidebar Items */}
                 <ul className="mt-8 text-center md:text-start rounded-2xl">
                     {links.map((link, index) => (
-                        <Link
-                            key={index}
-                            href={link.href}
-                            className="text-white cursor-pointer hover:text-gray-300"
-                            onClick={closeSidebar}
-                        >
-                            <li className="p-4 mb-4 transition-colors duration-300 rounded-2xl hover:bg-gray-400 hover:text-white">
+                        <Link key={index} href={link.href}>
+                            <li
+                                className={`p-4 mb-4 transition-colors duration-300 rounded-2xl ${
+                                    activeLink === link.href ? 'bg-yellow-700 text-white' : 'text-white hover:bg-gray-400 hover:text-white'
+                                }`}
+                                onClick={() => handleLinkClick(link.href)} // Handle link click
+                            >
                                 {link.text}
                             </li>
                         </Link>

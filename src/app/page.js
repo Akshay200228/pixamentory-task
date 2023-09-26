@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       {/* Main Content */}
-      <main className="w-full h-screen p-2 bg-gray-200">
+      <main className="w-full h-screen bg-gray-200 lg:px-2">
         <Hero />
       </main>
     </>
