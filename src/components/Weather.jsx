@@ -88,12 +88,12 @@ export default function Weather({ onWeatherUpdate }) {
     }, [latitude, longitude]);
 
     return (
-        <div className="my-8 flex justify-center items-center h-auto">
-            <div className="w-full max-w-md p-6 rounded-lg shadow-xl text-white bg-gradient-to-b from-gray-400 to-lightblue-400">
-                <h2 className="text-2xl text-black font-semibold mb-4">Weather Data</h2>
+        <div className="flex items-center justify-center h-auto my-8">
+            <div className="w-full max-w-md p-6 text-white rounded-lg shadow-xl bg-gradient-to-b from-gray-400 to-lightblue-400">
+                <h2 className="mb-4 text-2xl font-semibold text-black">Weather Data</h2>
                 <form className="mb-4">
                     <div className="mb-4">
-                        <label htmlFor="locationName" className="block text-neutral-800 mb-1">
+                        <label htmlFor="locationName" className="block mb-1 text-neutral-800">
                             City Name:
                         </label>
                         <input
@@ -102,16 +102,16 @@ export default function Weather({ onWeatherUpdate }) {
                             name="locationName"
                             value={locationName}
                             onChange={handleLocationChange}
-                            className="w-full px-3 py-2 bg-gray-200 text-gray-800 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-3 py-2 text-gray-800 placeholder-gray-400 bg-gray-200 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Enter city name"
                         />
-                        <p className="text-red-700 text-sm font-bold mt-2">
+                        <p className="mt-2 text-sm font-bold text-red-700">
                             If you enter a city name, latitude & longitude will be automatically added.
                         </p>
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="latitude" className="block text-neutral-800 mb-1">
+                        <label htmlFor="latitude" className="block mb-1 text-neutral-800">
                             Latitude:
                         </label>
                         <input
@@ -120,12 +120,12 @@ export default function Weather({ onWeatherUpdate }) {
                             name="latitude"
                             value={latitude}
                             onChange={handleLatitudeChange}
-                            className="w-full px-3 py-2 bg-gray-200 text-gray-800 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-3 py-2 text-gray-800 placeholder-gray-400 bg-gray-200 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Enter latitude"
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="longitude" className="block text-neutral-800 mb-1">
+                        <label htmlFor="longitude" className="block mb-1 text-neutral-800">
                             Longitude:
                         </label>
                         <input
@@ -134,25 +134,25 @@ export default function Weather({ onWeatherUpdate }) {
                             name="longitude"
                             value={longitude}
                             onChange={handleLongitudeChange}
-                            className="w-full px-3 py-2 bg-gray-200 text-gray-800 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-3 py-2 text-gray-800 placeholder-gray-400 bg-gray-200 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Enter longitude"
                         />
                     </div>
                     <button
                         type="button"
                         onClick={fetchLocationData}
-                        className="bg-gradient-to-r from-teal-400 to-teal-600 text-white py-2 px-4 rounded-md"
+                        className="px-4 py-2 text-white rounded-md bg-gradient-to-r from-teal-400 to-teal-600"
                     >
                         Get Weather Data
                     </button>
                 </form>
                 {isLoading && (
-                    <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin mt-4 mx-auto" />
+                    <img src='/sun.png' className="w-16 h-16 mx-auto mt-4 rounded-full animate-spin" />
                 )}
                 {weatherData && (
                     <div className="mt-4">
-                        <div className="bg-lightblue-200 rounded-lg p-6 shadow-lg">
-                            <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                        <div className="p-6 rounded-lg shadow-lg bg-lightblue-200">
+                            <h3 className="mb-4 text-2xl font-semibold text-gray-800">
                                 Current Weather
                             </h3>
                             <div className="space-y-2 text-gray-800">

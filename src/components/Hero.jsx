@@ -12,7 +12,7 @@ export default function Hero() {
     return (
         <div className="h-screen" style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}>
             {/* Banner Section */}
-            <div className="bg-gray-800 m text-white py-16">
+            <div className="py-16 text-white bg-gray-800 m">
                 <div className="container mx-auto text-center">
                     <h1 className="text-4xl font-bold">Welcome to Our Site</h1>
                     <p className="mt-4 text-gray-300">Some description goes here...</p>

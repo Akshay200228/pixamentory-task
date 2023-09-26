@@ -4,9 +4,8 @@ export default function Home() {
   return (
     <>
       {/* Main Content */}
-      <main className="w-full p-6 bg-gray-200">
+      <main className="w-full h-screen p-2 bg-gray-200">
         <Hero />
-        
       </main>
     </>
   )

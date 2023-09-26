@@ -52,7 +52,7 @@ export default function Sidebar() {
                         <Link
                             key={index}
                             href={link.href}
-                            className="text-white hover:text-gray-300"
+                            className="text-white cursor-pointer hover:text-gray-300"
                             onClick={closeSidebar}
                         >
                             <li className="p-4 mb-4 transition-colors duration-300 rounded-2xl hover:bg-gray-400 hover:text-white">
