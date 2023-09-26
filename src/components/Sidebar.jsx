@@ -51,7 +51,7 @@ export default function Sidebar() {
                     } lg:translate-x-0 h-screen w-full p-6 bg-gray-800 lg:w-80 transition-transform duration-300 ease-in-out transform fixed lg:relative flex flex-col justify-start`}
             >
                 {/* Logo */}
-                <span className="text-2xl font-bold text-white">YoYoYo</span>
+                <span className="text-4xl font-bold text-yellow-700">Logo</span>
 
                 {/* Sidebar Items */}
                 <ul className="mt-8 text-center md:text-start rounded-2xl">
