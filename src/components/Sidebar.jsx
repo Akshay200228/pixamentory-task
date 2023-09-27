@@ -1,11 +1,13 @@
 "use client"
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { FiX, FiMenu } from 'react-icons/fi';
 
 export default function Sidebar() {
     const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState('/'); 
+
+    const pathname = usePathname();
 
     const toggleMobileSidebar = () => {
         setMobileSidebarOpen(!isMobileSidebarOpen);
@@ -23,8 +25,7 @@ export default function Sidebar() {
     ];
 
     // Function to handle link click and update the active link
-    const handleLinkClick = (href) => {
-        setActiveLink(href);
+    const handleLinkClick = () => {
         closeSidebar();
     };
 
@@ -58,10 +59,10 @@ export default function Sidebar() {
                     {links.map((link, index) => (
                         <Link key={index} href={link.href}>
                             <li
-                                className={`p-4 mb-4 transition-colors duration-300 rounded-2xl ${
-                                    activeLink === link.href ? 'bg-yellow-700 text-white' : 'text-white hover:bg-gray-400 hover:text-white'
+                                className={`p-4 mb-4 transition-colors duration-300 rounded-2xl text-white hover:bg-gray-400 hover:text-white ${
+                                    pathname === link.href ? 'bg-yellow-700' : '' // Add the background color for the active link
                                 }`}
-                                onClick={() => handleLinkClick(link.href)} // Handle link click
+                                onClick={handleLinkClick}
                             >
                                 {link.text}
                             </li>
